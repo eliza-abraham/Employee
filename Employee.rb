@@ -1,5 +1,7 @@
 class Employee
-	
+	load 'EmployeeCount.rb'
+	include EmployeeCount
+
 	attr_reader 	:name
 	attr_reader 	:age
 	attr_reader		:level
@@ -7,12 +9,8 @@ class Employee
 	attr_accessor	:attendance
 	attr_accessor	:accountNumber
 	
-	#Initializing all the counters
+	#Initialize total employee count
 	@@employeeCount		= 0
-	@@developerCount	= 0
-	@@hrCount			= 0
-	@@accountantCount	= 0
-	@@managerCount		= 0
 
 	#Initializing the companies expense
 	@@expense	= 0
@@ -22,6 +20,11 @@ class Employee
 	@@lowestEmployee	= nil
 
 	def initialize(name,age,phone,level)
+		
+		if Employee == self.class
+			raise 'Not allowed to create an object' 
+		end
+
 		@@employeeCount+= 1 
 	
 		@attendance		= 0	
@@ -36,7 +39,7 @@ class Employee
 	#Displays the total number of employees
 	def self.print_total_employees
 		puts "Total number of Employees: #{@@employeeCount} \n"
-	end
+	end		
 
 	#Displays the name and age of the employee with the highest attendance
 	def print_highest_attendance

@@ -26,8 +26,4 @@ class Accountant < Employee
 		@@expense=expense
 	end
 
-	#Displays the total number of accountants
-	def print_total_accountants
-		puts "Total number of Accountants = #{@@accountantCount} \n"
-	end
 end

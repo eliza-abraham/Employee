@@ -5,8 +5,4 @@ class Developer < Employee
 		super
 	end
 
-	#Displays the total number of developers
-	def print_total_developers
-		puts "Total number of Developers = #{@@developerCount} \n"
-	end
 end
