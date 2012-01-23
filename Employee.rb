@@ -9,7 +9,7 @@ class Employee
 	attr_accessor	:attendance
 	attr_accessor	:accountNumber
 	
-	#Initialize total employee count
+	#Initialize counters
 	@@employeeCount		= 0
 
 	#Initializing the companies expense
@@ -18,10 +18,13 @@ class Employee
 	#Intializing variables for employees with highest and lowest attendance
 	@@highestEmployee	= nil
 	@@lowestEmployee	= nil
-
+	
+	@@skill = Hash.new
+	
 	def initialize(name,age,phone,level)
 		
 		if Employee == self.class
+			puts "in this block"
 			raise 'Not allowed to create an object' 
 		end
 
